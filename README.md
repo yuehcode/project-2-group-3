@@ -12,5 +12,5 @@ Analyst: Chris Lin
 
 # Repository Contents
 
-This project contains all of the code and documents for Project 2 in BF528 for Group 3.  
+This repository contains all of the code and documents for Project 2 in BF528 for Group 3.  
   
