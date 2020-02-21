@@ -1,11 +1,16 @@
 # Project Description
 
-A brief description of what this repository is for and what it contains
+This is Project 2. 
+  
+This description was last edited on 02/21/2020
 
 # Contributors
 
-List contributor names and github user names, or email addresses if desired
+Data Curator: Yueh-ting Wang  
+Programmer: Cody Webb  
+Analyst: Chris Lin  
 
 # Repository Contents
 
-Provide a brief description of each script/code file in this repo, what it does, and how to execute it
+This project contains all of the code and documents for Project 2 in BF528 for Group 3.  
+  
