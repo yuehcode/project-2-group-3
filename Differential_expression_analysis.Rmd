@@ -1,0 +1,51 @@
+---
+title: "Project_2"
+author: "Chris Lin"
+date: "2/26/2020"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r 1}
+ds <- read.table('gene_exp.diff', header = TRUE, stringsAsFactors = FALSE)
+ds <- ds[order(ds[,13] ),]
+table <- ds[1:10,]
+table_vals <- c('gene', 'value_1', 'log2.fold_change.', 'p_value', 'q_value') 
+table <- table[table_vals]
+table
+```
+
+
+
+```{r 2}
+hist <- hist(ds$log2.fold_change., breaks = 50)
+```
+```{r 3}
+ds1 <- subset(ds, ds$significant == 'yes')
+```
+
+
+```{r 4}
+hist1 <- hist(ds1$log2.fold_change., breaks = 50)
+```
+```{r 5}
+ds_up <- subset(ds, ds$log2.fold_change. > 0)
+ds_down <- subset(ds, ds$log2.fold_change. < 0)
+dim(ds_up)
+dim(ds_down)
+```
+
+```{r 6}
+up_genes <- matrix(ds_up$gene)
+down_genes <- matrix(ds_down$gene)
+
+write.table(up_genes, "up_genes.csv", row.names = FALSE, col.names=FALSE, quote = FALSE)
+write.table(up_genes, "down_genes.csv", row.names = FALSE, col.names=FALSE, quote = FALSE)
+write.table(up_genes, "up_genes.txt", row.names = FALSE, col.names=FALSE, quote = FALSE)
+write.table(up_genes, "down_genes.txt", row.names = FALSE, col.names=FALSE, quote = FALSE)
+```
