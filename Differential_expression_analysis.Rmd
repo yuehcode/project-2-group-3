@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-
+#Read in dataset, order by q-value, then create table with top 10 genes
 ```{r 1}
 ds <- read.table('gene_exp.diff', header = TRUE, stringsAsFactors = FALSE)
 ds <- ds[order(ds[,13] ),]
@@ -21,24 +21,28 @@ table
 ```
 
 
-
+#create histogram of log fold change with all genes
 ```{r 2}
 hist <- hist(ds$log2.fold_change., breaks = 50)
 ```
+#create dataset of log fold change with only significant genes
 ```{r 3}
 ds1 <- subset(ds, ds$significant == 'yes')
 ```
 
+#create histogram of log fold change with only significant genes
 
 ```{r 4}
 hist1 <- hist(ds1$log2.fold_change., breaks = 50)
 ```
+#subset significant genes for those with positive and negative log fold changes
 ```{r 5}
 ds_up <- subset(ds, ds$log2.fold_change. > 0)
 ds_down <- subset(ds, ds$log2.fold_change. < 0)
 dim(ds_up)
 dim(ds_down)
 ```
+#write out up and down regulated genes to csv and txt files
 
 ```{r 6}
 up_genes <- matrix(ds_up$gene)
