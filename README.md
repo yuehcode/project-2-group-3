@@ -1,9 +1,7 @@
 # Project Description
 
 This is Project 2. 
-  
-This description was last edited on 02/21/2020
-
+This repository contains files related to the project "Transcriptional Profile of Mammalian Cardiac Regeneration with mRNA seq" (O’Meara et al. Transcriptional Reversion of Cardiac Myocyte Fate During Mammalian Cardiac Regeneration. Circ Res. Feb 2015.)
 # Contributors
 
 Data Curator: Yueh-ting Wang  
